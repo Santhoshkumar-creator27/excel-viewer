@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,6 +10,139 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-} 
+}  */
 
 
+/* Background animation */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(-45deg, #89f7fe, #66a6ff, #fbc2eb, #a6c0fe);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Container */
+.app-container {
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* Title */
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Upload Button */
+.upload-btn {
+  background: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.upload-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+}
+
+.upload-btn:active {
+  transform: scale(0.95);
+}
+
+/* Search Box */
+.search-container {
+  margin: 20px 0;
+}
+
+.search-box {
+  padding: 10px 15px;
+  width: 50%;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.search-box:focus {
+  border-color: #007bff;
+}
+
+/* Table */
+.table-container {
+  overflow-x: auto;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.styled-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 600px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  animation: fadeIn 1s ease;
+}
+
+.styled-table th, .styled-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.styled-table th {
+  background: #f1f1f1;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.styled-table th:hover {
+  background: #e0e0e0;
+}
+
+.styled-table tr:hover {
+  background: #f9f9f9;
+  transition: background 0.3s;
+}
+
+/* Fade-in animation */
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Loading Text */
+.loading {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
